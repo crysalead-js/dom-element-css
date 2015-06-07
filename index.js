@@ -1,5 +1,5 @@
 var toCamelCase = require('to-camel-case');
-var hasRemovePropertyInStyle = "removeProperty" in document.createElement("a").style;
+var hasRemovePropertyInStyle = typeof document !== "undefined" && "removeProperty" in document.createElement("a").style;
 
 /**
  * Gets/Sets a DOM element property.
