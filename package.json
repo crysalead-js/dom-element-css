@@ -1,7 +1,8 @@
 {
   "name": "dom-element-css",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "DOM element style manipulation function.",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "http://github.com/crysalead-js/dom-element-css.git"
