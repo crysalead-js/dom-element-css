@@ -21,6 +21,17 @@ describe(".css()", function() {
 
   });
 
+  it("sets/gets a camel-cased property value", function() {
+
+    var span = domify('<span>Hello World</span>');
+
+    expect(css(span, "font-weight", "18px")).toBe("18px");
+
+    expect(span.style.fontWeight).toBe("18px");
+    expect(css(span, "font-weight")).toBe("18px");
+
+  });
+
   it("removes a value", function() {
 
     var span = domify('<span>Hello World</span>');
@@ -32,6 +43,20 @@ describe(".css()", function() {
     expect(css(span, "display", "none")).toBe("none");
     css(span, "display", undefined);
     expect(css(span, "display")).toBeFalsy();
+
+  });
+
+  it("removes a camel-cased property value", function() {
+
+    var span = domify('<span>Hello World</span>');
+
+    expect(css(span, "font-weight", "18px")).toBe("18px");
+    css(span, "font-weight", null);
+    expect(css(span, "font-weight")).toBeFalsy();
+
+    expect(css(span, "font-weight", "18px")).toBe("18px");
+    css(span, "font-weight", undefined);
+    expect(css(span, "font-weight")).toBeFalsy();
 
   });
 
